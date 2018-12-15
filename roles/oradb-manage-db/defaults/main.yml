@@ -3,15 +3,15 @@
   hostgroup: "{{ group_names[0] }}"
   oracle_dbca_rsp: "dbca_{{ dbh.oracle_db_name }}.rsp"        # Name of responsefile used by dbca. One per database
   oracle_netca_rsp: "netca_{{ dbh.home }}_{{ listener_name_template }}.rsp"
-  #v_s
+#v_s
   oracle_user: oracle                        # User that will own the Oracle Installations.
-  #v_e
+#v_e
   oracle_user_home: "/home/{{ oracle_user }}" # Home directory for oracle_user. Needed for passing in ssh-keys, profiles etc
-  #v_s
+#v_s
   oracle_group: oinstall                          # Primary group for oracle_user.
   oracle_dba_group: dba                          # Primary group for oracle_user.
   grid_dba_group: asmdba                          # Primary group for oracle_user.
-  #v_e
+#v_e
   oracle_env_dbca:
         ORACLE_HOME: "{{ oracle_home_db}}"
         LD_LIBRARY_PATH: "{{ oracle_home_db}}/lib"
