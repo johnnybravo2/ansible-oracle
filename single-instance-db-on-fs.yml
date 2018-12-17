@@ -2,7 +2,7 @@
 
 
  - name: Host configuration
-   hosts: "{{ hostgroup }}"
+   hosts: "{{ v_target_host | hostgroup }}"
    become: yes
    roles:
       - common
@@ -10,7 +10,7 @@
       - cxoracle
 
  - name: Database Server Installation & Database Creation
-   hosts: "{{ hostgroup }}"
+   hosts: "{{ v_target_host | hostgroup }}"
    become: yes
    roles:
       - oraswdb-install
