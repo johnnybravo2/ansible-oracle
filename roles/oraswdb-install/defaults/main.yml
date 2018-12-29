@@ -77,8 +77,9 @@
   hostinitdaemon: "{% if    ansible_os_family == 'RedHat' and ansible_distribution_major_version | int >= 7   %}systemd
                    {%- elif ansible_os_family == 'Suse'   and ansible_distribution_major_version | int >= 12 %}systemd
                    {%- else %}{% if ansible_service_mgr is defined %}{{ ansible_service_mgr }}{% else %}init{% endif %}{% endif %}"
-
+#v_s
   disable_EE_options: True
+#v_e
   oracle_EE_options: "{%- if   db_homes_config[dbh.home]['version'] in ('18.3.0.0') %}{{ oracle_EE_options_183 }}
                       {%- elif db_homes_config[dbh.home]['version'] in ('12.2.0.1') %}{{ oracle_EE_options_122 }}
                       {%- elif db_homes_config[dbh.home]['version'] in ('12.1.0.1', '12.1.0.2') %}{{oracle_EE_options_121}}
